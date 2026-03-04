@@ -23,7 +23,7 @@ public class ServiceTestDataGenerator extends TestDataGenerator {
 	@Override
 	public String getPatientId(MessageContentsList messageContentsList) {
 		GetCareManagersType request = (GetCareManagersType) messageContentsList.get(1);
-		return request.getPatientId().toString();
+		return request.getPatientId().getExtension();
 	}
 
 	@Override
@@ -45,9 +45,10 @@ public class ServiceTestDataGenerator extends TestDataGenerator {
 				new Object[]{logicalAddress, registeredResidentId, businessObjectId});
 
 		PractitionerRoleType practitionerRole = new PractitionerRoleType();
+		practitionerRole.setCareManagerHeader(getCareManagerHeader(logicalAddress, registeredResidentId));
 		practitionerRole.setCode(getCodeValue(OID_KV_TYP_AV_FAST_KONTAKT, "1")); // fast vårdkontakt
-		practitionerRole.setPeriod(getDatePeriod());
 		practitionerRole.setPractitioner(getPractitioner());
+		practitionerRole.setPeriod(getDatePeriod());
 		practitionerRole.setInternalNotes("Intern kommentar");
 		practitionerRole.setExternalNotes("Extern kommentar");
 		practitionerRole.setManagingCareGiver(getOrganization("Z88"));
@@ -76,8 +77,8 @@ public class ServiceTestDataGenerator extends TestDataGenerator {
 
 	private @NonNull DatePeriodType getDatePeriod() {
 		DatePeriodType datePeriodType = new DatePeriodType();
-		datePeriodType.setStart("2024-01-01");
-		datePeriodType.setEnd("2024-12-31");
+		datePeriodType.setStart("20240101");
+		datePeriodType.setEnd("20241231");
 		return datePeriodType;
 	}
 
@@ -135,5 +136,17 @@ public class ServiceTestDataGenerator extends TestDataGenerator {
 		cvType.setCodeSystem(codeSystem);
 		cvType.setCode(code);
 		return cvType;
+	}
+
+	private @NonNull HeaderType getCareManagerHeader(String logicalAddress, String registeredResidentId) {
+		HeaderType header = new HeaderType();
+		AccessControlHeaderType accessControlHeader = new AccessControlHeaderType();
+		accessControlHeader.setAccountableHealthcareProviderId(getUniqueId(OID_HSA_ID, "TSTDEF2321000156-ACC"));
+		accessControlHeader.setAccountableCareUnitId(getUniqueId(OID_HSA_ID, "TSTDEF2321000156-ACC"));
+		accessControlHeader.setPatientId(getUniqueId(OID_PERSONNUMMER, registeredResidentId));
+		accessControlHeader.setBlockComparisonTime("20240101000000");
+		header.setSourceSystemId(getUniqueId(OID_HSA_ID, logicalAddress));
+		header.setAccessControlHeader(accessControlHeader);
+		return header;
 	}
 }
