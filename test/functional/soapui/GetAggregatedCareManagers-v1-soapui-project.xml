@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="f2480b38-e6b2-40db-b099-a716a075b942" activeEnvironment="Default" name="GetAggregatedCareManagers.v1" resourceRoot="${projectDir}" soapui-version="5.9.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="Export JUnit Results" value="false"/>
+  <con:entry key="Export All" value="false"/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="TestSuite" value="TestSuite for local testing"/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Select Report Type" value=""/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="Print Report" value="false"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Export JUnit Results with test properties" value="false"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="TestCase" value="&lt;all>"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="TestRunner Path" value=""/>
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="Root Folder" value=""/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Save Project" value="false"/>
+</xml-fragment>]]></con:setting></con:settings><con:interface xsi:type="con:WsdlInterface" id="f4460d21-f823-44a9-b0d3-9abb6c2dd9d0" wsaVersion="NONE" name="GetCareManagersResponderBinding" type="wsdl" bindingName="{urn:riv:coreprocess:residentparticipation:residentparticipation:GetCareManagers:1:rivtabp21}GetCareManagersResponderBinding" soapVersion="1_1" anonymous="optional" definition="../../../GetAggregatedCareManagers-v1-schemas/src/main/resources/schemas/coreprocess-residentparticipation-residentparticipation/interactions/GetCareManagersInteraction/GetCareManagersInteraction_1.0_RIVTABP21.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\git\GetAggregatedCareManagers\GetAggregatedCareManagers-v1-schemas\src\main\resources\schemas\coreprocess-residentparticipation-residentparticipation\interactions\GetCareManagersInteraction\GetCareManagersInteraction_1.0_RIVTABP21.wsdl"><con:part><con:url>file:\C:\git\GetAggregatedCareManagers\GetAggregatedCareManagers-v1-schemas\src\main\resources\schemas\coreprocess-residentparticipation-residentparticipation\interactions\GetCareManagersInteraction\GetCareManagersInteraction_1.0_RIVTABP21.wsdl</con:url><con:content><![CDATA[<!--Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements. See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership. Sveriges Kommuner och Landsting licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License. You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied. See the License for the
+ specific language governing permissions and limitations
+ under the License.-->
+<wsdl:definitions name="GetCareManagersInteraction" targetNamespace="urn:riv:coreprocess:residentparticipation:residentparticipation:GetCareManagers:1:rivtabp21" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tjsr="urn:riv:coreprocess:residentparticipation:residentparticipation:GetCareManagersResponder:1" xmlns:tjsi="urn:riv:coreprocess:residentparticipation:residentparticipation:GetCareManagersInitiator:1" xmlns:tns="urn:riv:coreprocess:residentparticipation:residentparticipation:GetCareManagers:1:rivtabp21" xmlns:itr="urn:riv:itintegration:registry:1">
+  <wsdl:documentation>Tjänsteinteraktionens namn: GetCareManagersInteraction
+		Beskrivning: 
+		  Hämta patients fasta kontakter
+		Revisioner: 
+		Tjänstedomän: coreprocess:residentparticipation:residentparticipation
+		Tjänsteinteraktionstyp: Fråga-Svar
+		WS-profil: RIVTABP21
+		Förvaltas av: Sveriges Kommuner och Landsting</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema targetNamespace="urn:riv:coreprocess:residentparticipation:residentparticipation:GetCareManagers:1:rivtabp21">
+      <xs:import schemaLocation="GetCareManagersResponder_1.0.xsd" namespace="urn:riv:coreprocess:residentparticipation:residentparticipation:GetCareManagersResponder:1"/>
+      <xs:import schemaLocation="../../core_components/itintegration_registry_1.0.xsd" namespace="urn:riv:itintegration:registry:1"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="GetCareManagersRequest">
+    <wsdl:part name="LogicalAddress" element="itr:LogicalAddress">
+      <wsdl:documentation>The county/region code</wsdl:documentation>
+    </wsdl:part>
+    <wsdl:part name="parameters" element="tjsr:GetCareManagers"/>
+  </wsdl:message>
+  <wsdl:message name="GetCareManagersResponse">
+    <wsdl:part name="parameters" element="tjsr:GetCareManagersResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="GetCareManagersResponderInterface">
+    <wsdl:operation name="GetCareManagers">
+      <wsdl:input message="tns:GetCareManagersRequest"/>
+      <wsdl:output message="tns:GetCareManagersResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GetCareManagersResponderBinding" type="tns:GetCareManagersResponderInterface">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetCareManagers">
+      <soap:operation soapAction="urn:riv:coreprocess:residentparticipation:residentparticipation:GetCareManagersResponder:1:GetCareManagers" style="document"/>
+      <wsdl:input>
+        <soap:header use="literal" message="tns:GetCareManagersRequest" part="LogicalAddress"/>
+        <soap:body use="literal" parts="parameters"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GetCareManagersResponderService">
+    <wsdl:port name="GetCareManagersResponderPort" binding="tns:GetCareManagersResponderBinding">
+      <soap:address location="http://tempuri.org"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\C:\git\GetAggregatedCareManagers\GetAggregatedCareManagers-v1-schemas\src\main\resources\schemas\coreprocess-residentparticipation-residentparticipation\interactions\GetCareManagersInteraction\GetCareManagersResponder_1.0.xsd</con:url><con:content><![CDATA[<!--Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements. See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership. Sveriges Kommuner och Landsting licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License. You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied. See the License for the
+ specific language governing permissions and limitations
+ under the License.-->
+<xs:schema targetNamespace="urn:riv:coreprocess:residentparticipation:residentparticipation:GetCareManagersResponder:1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:riv:coreprocess:residentparticipation:residentparticipation:GetCareManagersResponder:1" xmlns:m1="urn:riv:coreprocess:residentparticipation:residentparticipation:1" xmlns:core="urn:riv:coreprocess:residentparticipation:residentparticipation:1" xmlns:codes="urn:riv:coreprocess:residentparticipation:residentparticipation:enums:1">
+  <xs:import schemaLocation="../../core_components/coreprocess_residentparticipation_residentparticipation_1.0.xsd" namespace="urn:riv:coreprocess:residentparticipation:residentparticipation:1"/>
+  <xs:import schemaLocation="../../core_components/coreprocess_residentparticipation_residentparticipation_enum_1.0.xsd" namespace="urn:riv:coreprocess:residentparticipation:residentparticipation:enums:1"/>
+  <xs:element name="GetCareManagers" type="tns:GetCareManagersType"/>
+  <xs:element name="GetCareManagersResponse" type="tns:GetCareManagersResponseType"/>
+  <xs:complexType name="GetCareManagersType">
+    <xs:sequence>
+      <xs:element name="patientId" type="core:IIType"/>
+      <xs:element name="careGiverId" type="core:IIType" minOccurs="0"/>
+      <xs:element name="careUnitId" type="core:IIType" minOccurs="0"/>
+      <xs:element name="careManagerType" type="core:CVType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="careProcessId" type="core:IIType" minOccurs="0"/>
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetCareManagersResponseType">
+    <xs:sequence>
+      <xs:element name="careManager" type="core:PractitionerRoleType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\git\GetAggregatedCareManagers\GetAggregatedCareManagers-v1-schemas\src\main\resources\schemas\coreprocess-residentparticipation-residentparticipation\core_components\coreprocess_residentparticipation_residentparticipation_1.0.xsd</con:url><con:content><![CDATA[<!--Licensed to the Apache Software Foundation (ASF) under one or more contributor 
+	license agreements. See the NOTICE file distributed with this work for additional 
+	information regarding copyright ownership. Sveriges Kommuner och Landsting 
+	licenses this file to you under the Apache License, Version 2.0 (the "License"); 
+	you may not use this file except in compliance with the License. You may 
+	obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 
+	Unless required by applicable law or agreed to in writing, software distributed 
+	under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES 
+	OR CONDITIONS OF ANY KIND, either express or implied. See the License for 
+	the specific language governing permissions and limitations under the License.-->
+<xs:schema targetNamespace="urn:riv:coreprocess:residentparticipation:residentparticipation:1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:codes="urn:riv:coreprocess:residentparticipation:residentparticipation:enums:1" xmlns:tns="urn:riv:coreprocess:residentparticipation:residentparticipation:1">
+  <xs:import schemaLocation="coreprocess_residentparticipation_residentparticipation_enum_1.0.xsd" namespace="urn:riv:coreprocess:residentparticipation:residentparticipation:enums:1"/>
+  <xs:complexType name="HeaderType">
+    <xs:sequence>
+      <xs:element name="accessControlHeader" type="tns:AccessControlHeaderType"/>
+      <xs:element name="sourceSystemId" type="tns:IIType"/>
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AccessControlHeaderType">
+    <xs:sequence>
+      <xs:element name="accountableHealthcareProviderId" type="tns:IIType"/>
+      <xs:element name="accountableCareUnitId" type="tns:IIType" minOccurs="0"/>
+      <xs:element name="patientId" type="tns:IIType"/>
+      <xs:element name="careProcessId" type="tns:IIType" minOccurs="0"/>
+      <xs:element name="blockComparisonTime" type="tns:TimeStampType"/>
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TimeStampType">
+    <xs:annotation>
+      <xs:documentation>A quantity specifying a point on the axis of natural time.
+				A point in time is most often represented as a calendar
+				expression.
+
+				The time has the format YYYYMMDDhhmmss</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="(19|20)\d\d(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])(0[0-9]|1[0-9]|2[0123])([0-5])([0-9])([0-5])([0-9])"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="PractitionerType">
+    <xs:sequence>
+      <xs:element name="hsaId" type="tns:IIType"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="qualification" type="tns:CVType" minOccurs="0"/>
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CareTeamType">
+    <xs:sequence>
+      <xs:element name="id" type="tns:IIType"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="internalNotes" type="xs:string" minOccurs="0"/>
+      <xs:element name="externalNotes" type="xs:string" minOccurs="0"/>
+      <xs:element name="contact" type="tns:ContactType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PractitionerRoleType">
+    <xs:sequence>
+      <xs:element name="careManagerHeader" type="tns:HeaderType"/>
+      <xs:element name="code" type="tns:CVType"/>
+      <xs:element name="practitioner" type="tns:PractitionerType"/>
+      <xs:element name="careTeam" type="tns:CareTeamType" minOccurs="0"/>
+      <xs:element name="period" type="tns:DatePeriodType"/>
+      <xs:element name="internalNotes" type="xs:string" minOccurs="0"/>
+      <xs:element name="externalNotes" type="xs:string" minOccurs="0"/>
+      <xs:element name="managingCareGiver" type="tns:OrganizationType"/>
+      <xs:element name="managingCareUnit" type="tns:OrganizationType" minOccurs="0"/>
+      <xs:element name="careProvidingCareUnit" type="tns:OrganizationType" minOccurs="0"/>
+      <xs:element name="contact" type="tns:ContactType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OrganizationType">
+    <xs:sequence>
+      <xs:element name="hsaId" type="tns:IIType"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="contact" type="tns:ContactType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ContactType">
+    <xs:sequence>
+      <xs:element name="telecom" type="tns:ContactPointSystemType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="address" type="tns:AddressType" minOccurs="0"/>
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AddressType">
+    <xs:sequence>
+      <xs:element name="type" type="tns:CVType" minOccurs="0"/>
+      <xs:element name="line" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="city" type="xs:string" minOccurs="0"/>
+      <xs:element name="postalCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="period" type="tns:HoursOfServiceType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ContactPointSystemType">
+    <xs:sequence>
+      <xs:element name="system" type="tns:CVType" minOccurs="0"/>
+      <xs:element name="value" type="xs:string"/>
+      <xs:element name="period" type="tns:HoursOfServiceType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DatePeriodType">
+    <xs:sequence>
+      <xs:element name="start" type="tns:DateType"/>
+      <xs:element name="end" type="tns:DateType" minOccurs="0"/>
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HoursOfServiceType">
+    <xs:sequence>
+      <xs:element name="datePeriod" type="tns:DatePeriodType" minOccurs="0"/>
+      <xs:element name="weekDay" type="codes:WeekDaysEnum" minOccurs="0" maxOccurs="7"/>
+      <xs:element name="month" type="codes:MonthsEnum" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="time" type="tns:TimePeriodType" minOccurs="0"/>
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="DateType">
+    <xs:annotation>
+      <xs:documentation>YYYYMMDD</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="(19|20)\d\d(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TimeType">
+    <xs:annotation>
+      <xs:documentation>HHmmss</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([0-1][0-9]|2[0-3])[0-5][0-9][0-5][0-9]"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TimePeriodType">
+    <xs:annotation>
+      <xs:documentation>Används för att specificera ett tidsintervall
+				med hjälp av start- och sluttid.
+				start:
+				Starttid på formatet HHmmss
+				end:
+				Sluttid på formatet HHmmss</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="start" type="tns:TimeType" minOccurs="0"/>
+      <xs:element name="end" type="tns:TimeType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CVType">
+    <xs:sequence>
+      <xs:element name="code" type="xs:string" minOccurs="0"/>
+      <xs:element name="codeSystem" type="xs:string" minOccurs="0"/>
+      <xs:element name="codeSystemName" type="xs:string" minOccurs="0"/>
+      <xs:element name="codeSystemVersion" type="xs:string" minOccurs="0"/>
+      <xs:element name="displayName" type="xs:string" minOccurs="0"/>
+      <xs:element name="originalText" type="xs:string" minOccurs="0"/>
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IIType">
+    <xs:sequence>
+      <xs:element name="root" type="xs:string"/>
+      <xs:element name="extension" type="xs:string" minOccurs="0"/>
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\git\GetAggregatedCareManagers\GetAggregatedCareManagers-v1-schemas\src\main\resources\schemas\coreprocess-residentparticipation-residentparticipation\core_components\coreprocess_residentparticipation_residentparticipation_enum_1.0.xsd</con:url><con:content><![CDATA[<!--Licensed to the Apache Software Foundation (ASF) under one or more contributor 
+	license agreements. See the NOTICE file distributed with this work for additional 
+	information regarding copyright ownership. Sveriges Kommuner och Landsting 
+	licenses this file to you under the Apache License, Version 2.0 (the "License"); 
+	you may not use this file except in compliance with the License. You may 
+	obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 
+	Unless required by applicable law or agreed to in writing, software distributed 
+	under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES 
+	OR CONDITIONS OF ANY KIND, either express or implied. See the License for 
+	the specific language governing permissions and limitations under the License.-->
+<xs:schema targetNamespace="urn:riv:coreprocess:residentparticipation:residentparticipation:enums:1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:riv:coreprocess:residentparticipation:residentparticipation:enums:1">
+  <xs:simpleType name="WeekDaysEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Monday"/>
+      <xs:enumeration value="Tuesday"/>
+      <xs:enumeration value="Wednesday"/>
+      <xs:enumeration value="Thursday"/>
+      <xs:enumeration value="Friday"/>
+      <xs:enumeration value="Saturday"/>
+      <xs:enumeration value="Sunday"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="MonthsEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="January"/>
+      <xs:enumeration value="February"/>
+      <xs:enumeration value="March"/>
+      <xs:enumeration value="April"/>
+      <xs:enumeration value="May"/>
+      <xs:enumeration value="June"/>
+      <xs:enumeration value="July"/>
+      <xs:enumeration value="August"/>
+      <xs:enumeration value="September"/>
+      <xs:enumeration value="October"/>
+      <xs:enumeration value="November"/>
+      <xs:enumeration value="December"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\git\GetAggregatedCareManagers\GetAggregatedCareManagers-v1-schemas\src\main\resources\schemas\coreprocess-residentparticipation-residentparticipation\core_components\itintegration_registry_1.0.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="urn:riv:itintegration:registry:1" elementFormDefault="qualified" version="1.0" xmlns="urn:riv:itintegration:registry:1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+    <xs:documentation>Beskrivning: 	Grundl��ggande informationsobjekt f��r dom��nen itintegration:registry (adressering av tj��nster)
+			
+			Revisionshistorik: 2011-06-27 Mats Ekhammar, Callista Enterprise AB
+				Added ServiceContractType
+			
+			Datum:			2011-05-04
+			Beskrivning:	Initial version
+			F��rfattare:		marcus.krantz@callistaenterprise.se</xs:documentation>
+  </xs:annotation>
+  <xs:element name="LogicalAddress" type="LogicalAddressType"/>
+  <xs:element name="ServiceContract" type="ServiceContractType"/>
+  <xs:simpleType name="LogicalAddressType">
+    <xs:annotation>
+      <xs:documentation>Defines the type for logical address according to national reference architecture.
+				Superseeds wsa:To as type for logical address header in RIVTA 2.1.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:complexType name="ServiceContractType">
+    <xs:annotation>
+      <xs:documentation>Type which describes a service contract. Used in interaction GetSupportedServiceContracts.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ServiceContractNamespace" type="xs:anyURI"/>
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://tempuri.org</con:endpoint></con:endpoints><con:operation id="6da96cd6-aeef-4faa-8ae1-d63ce5f6b273" isOneWay="false" action="urn:riv:coreprocess:residentparticipation:residentparticipation:GetCareManagersResponder:1:GetCareManagers" name="GetCareManagers" bindingOperationName="GetCareManagers" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b9ba1bad-002b-479d-81d9-9e57a78845bf" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://tempuri.org</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:itintegration:registry:1" xmlns:urn1="urn:riv:coreprocess:residentparticipation:residentparticipation:GetCareManagersResponder:1" xmlns:urn2="urn:riv:coreprocess:residentparticipation:residentparticipation:1">\r
+   <soapenv:Header>\r
+      <urn:LogicalAddress>?</urn:LogicalAddress>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <urn1:GetCareManagers>\r
+         <urn1:patientId>\r
+            <urn2:root>?</urn2:root>\r
+            <!--Optional:-->\r
+            <urn2:extension>?</urn2:extension>\r
+            <!--You may enter ANY elements at this point-->\r
+         </urn1:patientId>\r
+         <!--Optional:-->\r
+         <urn1:careGiverId>\r
+            <urn2:root>?</urn2:root>\r
+            <!--Optional:-->\r
+            <urn2:extension>?</urn2:extension>\r
+            <!--You may enter ANY elements at this point-->\r
+         </urn1:careGiverId>\r
+         <!--Optional:-->\r
+         <urn1:careUnitId>\r
+            <urn2:root>?</urn2:root>\r
+            <!--Optional:-->\r
+            <urn2:extension>?</urn2:extension>\r
+            <!--You may enter ANY elements at this point-->\r
+         </urn1:careUnitId>\r
+         <!--Zero or more repetitions:-->\r
+         <urn1:careManagerType>\r
+            <!--Optional:-->\r
+            <urn2:code>?</urn2:code>\r
+            <!--Optional:-->\r
+            <urn2:codeSystem>?</urn2:codeSystem>\r
+            <!--Optional:-->\r
+            <urn2:codeSystemName>?</urn2:codeSystemName>\r
+            <!--Optional:-->\r
+            <urn2:codeSystemVersion>?</urn2:codeSystemVersion>\r
+            <!--Optional:-->\r
+            <urn2:displayName>?</urn2:displayName>\r
+            <!--Optional:-->\r
+            <urn2:originalText>?</urn2:originalText>\r
+            <!--You may enter ANY elements at this point-->\r
+         </urn1:careManagerType>\r
+         <!--Optional:-->\r
+         <urn1:careProcessId>\r
+            <urn2:root>?</urn2:root>\r
+            <!--Optional:-->\r
+            <urn2:extension>?</urn2:extension>\r
+            <!--You may enter ANY elements at this point-->\r
+         </urn1:careProcessId>\r
+         <!--You may enter ANY elements at this point-->\r
+      </urn1:GetCareManagers>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:coreprocess:residentparticipation:residentparticipation:GetCareManagersResponder:1:GetCareManagers"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="02d5c8ed-d98c-43aa-bb71-a50aa2662df1" name="TestSuite for local testing"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="444403c0-e0d2-438b-964e-75b322a8568d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC1: Hämta data från bakomloggande producenter" searchProperties="true"><con:settings/><con:testStep type="request" id="c9bfb74b-18ba-43bd-815a-b61a0a960d87" name="GetCareManagers - 121212121212 - Tolvan Tolvansson"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GetCareManagersResponderBinding</con:interface><con:operation>GetCareManagers</con:operation><con:request name="GetCareManagers - 121212121212 - Tolvan Tolvansson" id="97e8d345-4fba-492e-b3c1-7d621b912870"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="x-rivta-original-serviceconsumer-hsaid" value="test"/>&#13;
+  &lt;con:entry key="x-skltp-correlation-id" value="321"/>&#13;
+  &lt;con:entry key="x-vp-sender-id" value="sample-sender-id"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#agg-env}</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:itintegration:registry:1" xmlns:urn1="urn:riv:coreprocess:residentparticipation:residentparticipation:GetCareManagersResponder:1" xmlns:urn2="urn:riv:coreprocess:residentparticipation:residentparticipation:1">
+   <soapenv:Header>
+      <urn:LogicalAddress>5565594230</urn:LogicalAddress>
+   </soapenv:Header>
+   <soapenv:Body>
+      <urn1:GetCareManagers>
+         <urn1:patientId>
+            <urn2:root>1.2.752.129.2.1.3.1</urn2:root>
+            <urn2:extension>121212121212</urn2:extension>
+         </urn1:patientId>
+      </urn1:GetCareManagers>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="4204720d-ad60-4dcd-867b-0cea2d77e6e3" name="SOAP Response"/><con:assertion type="Schema Compliance" id="f73b9b59-9003-4fe3-8e0c-a3a9c6d45e0d" name="Schema Compliance"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion" id="6b193031-8b3e-45d6-a874-b93c5b8887a8" name="Not SOAP Fault"/><con:assertion type="XPath Match" id="9a707d12-03a6-41ad-bf45-1bd95ff00ef1" name="XPath Match"><con:configuration><path>count(//*:ProcessingStatusList)</path><content>3</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" id="a41d5512-1f00-4096-a0a5-ca7e4a71673b"><con:configuration/></con:assertion><con:assertion type="XPath Match" id="49a90be5-8b2a-4e26-b4b6-a6cf2ea535ba" name="Response"><con:configuration><path>count(//*:careManager)</path><content>3</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="urn:riv:coreprocess:residentparticipation:residentparticipation:GetCareManagersResponder:1:GetCareManagers" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="68d8f294-4cd0-4dfb-9a2d-8d73e64bfc2a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC2: Testperson saknar engagemang" searchProperties="true"><con:settings/><con:testStep type="request" name="GetCareManagers - 188803099368 - Agda Andersson" id="0c349004-0e7b-4d30-acbc-a68450604e12"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GetCareManagersResponderBinding</con:interface><con:operation>GetCareManagers</con:operation><con:request name="GetCareManagers - 188803099368 - Agda Andersson" id="16508d54-2e5f-4222-93fd-8872fc15c6ae"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="x-rivta-original-serviceconsumer-hsaid" value="test"/>&#13;
+  &lt;con:entry key="x-skltp-correlation-id" value="321"/>&#13;
+  &lt;con:entry key="x-vp-sender-id" value="sample-sender-id"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#agg-env}</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:itintegration:registry:1" xmlns:urn1="urn:riv:coreprocess:residentparticipation:residentparticipation:GetCareManagersResponder:1" xmlns:urn2="urn:riv:coreprocess:residentparticipation:residentparticipation:1">\r
+   <soapenv:Header>\r
+      <urn:LogicalAddress>5565594230</urn:LogicalAddress>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <urn1:GetCareManagers>\r
+         <urn1:patientId>\r
+            <urn2:root>1.2.752.129.2.1.3.1</urn2:root>\r
+            <urn2:extension>188803099368</urn2:extension>
+        </urn1:patientId>\r
+      </urn1:GetCareManagers>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="7d031fc9-c437-4415-85a1-b0056017f3ab"/><con:assertion type="Schema Compliance" id="af7a2f18-e9ef-47d4-9285-495cfad9a3e0"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion" id="f5a34866-6423-44e2-b476-59ee62f42caf"/><con:assertion type="XPath Match" id="dd5082c3-22a6-4b51-a901-1f2688eac119" name="XPath Match"><con:configuration><path>count(//*:ProcessingStatusList)</path><content>0</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" id="88800b4c-64fc-4ff2-8f4e-a1fff0537171" name="Response"><con:configuration><path>count(//*:careManager)</path><content>0</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="2df22e8a-dc4f-48c3-9292-9e47458df787" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC3: Inget svar från ett system, endast engagemang i ett system" searchProperties="true"><con:settings/><con:testStep type="request" name="GetCareManagers - 194911172296 - Sven Sturesson" id="7a1c95a2-6476-4caf-9917-3a968ede0c35"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GetCareManagersResponderBinding</con:interface><con:operation>GetCareManagers</con:operation><con:request name="GetCareManagers - 194911172296 - Sven Sturesson" id="b23d927d-4503-4ead-9a76-74cd891a6e31"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="x-rivta-original-serviceconsumer-hsaid" value="test"/>&#13;
+  &lt;con:entry key="x-skltp-correlation-id" value="321"/>&#13;
+  &lt;con:entry key="x-vp-sender-id" value="sample-sender-id"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#agg-env}</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:itintegration:registry:1" xmlns:urn1="urn:riv:coreprocess:residentparticipation:residentparticipation:GetCareManagersResponder:1" xmlns:urn2="urn:riv:coreprocess:residentparticipation:residentparticipation:1">\r
+   <soapenv:Header>\r
+      <urn:LogicalAddress>5565594230</urn:LogicalAddress>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <urn1:GetCareManagers>\r
+         <urn1:patientId>\r
+            <urn2:root>1.2.752.129.2.1.3.1</urn2:root>
+            <urn2:extension>194911172296</urn2:extension>
+         </urn1:patientId>\r
+      </urn1:GetCareManagers>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="35e84eb4-2631-4de8-b3da-936dd73b9e8b"/><con:assertion type="Schema Compliance" id="67cd6a7e-9df3-4713-9c35-d9730da942c8"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion" id="27ae86af-8575-4e20-8560-9113694984da"/><con:assertion type="XPath Match" id="36bc0f21-2ab2-4d7a-8032-b3bb572eb436" name="XPath Match"><con:configuration><path>count(//*:ProcessingStatusList)</path><content>2</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" id="9ff1686a-0682-47f6-a35f-fe60a7e4a823" name="Response"><con:configuration><path>count(//*:careManager)</path><content>1</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="62f91c21-8d9d-46e8-ab2b-6d5f6de4d213" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC4: Inget svar från ett system, engagemang i flera system, timeout från ett system" searchProperties="true"><con:settings/><con:testStep type="request" name="GetCareManagers - 198611062384 - Ulla Alm" id="20dd02cf-4270-4471-9ba8-c0a1189a5c61"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GetCareManagersResponderBinding</con:interface><con:operation>GetCareManagers</con:operation><con:request name="GetCareManagers - 198611062384 - Ulla Alm" id="2358143f-beec-4cf3-899b-13584f74bc4f"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="x-rivta-original-serviceconsumer-hsaid" value="test"/>&#13;
+  &lt;con:entry key="x-skltp-correlation-id" value="321"/>&#13;
+  &lt;con:entry key="x-vp-sender-id" value="sample-sender-id"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#agg-env}</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:itintegration:registry:1" xmlns:urn1="urn:riv:coreprocess:residentparticipation:residentparticipation:GetCareManagersResponder:1" xmlns:urn2="urn:riv:coreprocess:residentparticipation:residentparticipation:1">\r
+   <soapenv:Header>\r
+      <urn:LogicalAddress>5565594230</urn:LogicalAddress>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <urn1:GetCareManagers>\r
+         <urn1:patientId>\r
+            <urn2:root>1.2.752.129.2.1.3.1</urn2:root>
+            <urn2:extension>198611062384</urn2:extension>
+         </urn1:patientId>\r
+      </urn1:GetCareManagers>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="d166fcc6-7aab-4c97-b0df-d96af0a56326"/><con:assertion type="Schema Compliance" id="bb746732-0239-4228-8abd-9f38d2396760"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion" id="96ffd14e-8c8f-4d1e-83f7-111a6072b7dd"/><con:assertion type="XPath Match" id="cc88fc70-9245-4470-bd8b-3ef5e65cb2de" name="XPath Match"><con:configuration><path>count(//*:ProcessingStatusList)</path><content>3</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" id="2ce4da5f-63ad-4911-91e7-929828ac33d8" name="Response"><con:configuration><path>count(//*:careManager)</path><content>3</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" id="e6471ad1-d927-4574-addb-59ae6edf3dd2" name="Error"><con:configuration><path>count(//*:lastUnsuccessfulSynchError)</path><content>1</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="f26c27e7-f124-4ab6-b8bb-a4f9a2a9bf3c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC5: Error från system (exception)" searchProperties="true"><con:settings/><con:testStep type="request" name="GetCareManagers - 192011189228 - Gunbritt Boden" id="024a5d2d-8fa1-4de0-8b93-a9f390b65495"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GetCareManagersResponderBinding</con:interface><con:operation>GetCareManagers</con:operation><con:request name="GetCareManagers - 192011189228 - Gunbritt Boden" id="1d012790-ace9-42aa-8c58-04690fafb622"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="x-rivta-original-serviceconsumer-hsaid" value="test"/>&#13;
+  &lt;con:entry key="x-skltp-correlation-id" value="321"/>&#13;
+  &lt;con:entry key="x-vp-sender-id" value="sample-sender-id"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#agg-env}</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:itintegration:registry:1" xmlns:urn1="urn:riv:coreprocess:residentparticipation:residentparticipation:GetCareManagersResponder:1" xmlns:urn2="urn:riv:coreprocess:residentparticipation:residentparticipation:1">\r
+   <soapenv:Header>\r
+      <urn:LogicalAddress>5565594230</urn:LogicalAddress>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <urn1:GetCareManagers>\r
+         <urn1:patientId>\r
+            <urn2:root>1.2.752.129.2.1.3.1</urn2:root>
+            <urn2:extension>192011189228</urn2:extension>
+         </urn1:patientId>\r
+      </urn1:GetCareManagers>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="8be0c538-3d0f-46d8-9ecd-86eab4fc7bd4"/><con:assertion type="Schema Compliance" id="74b6bc3d-d11c-4a9a-ad01-afcb50e78575"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion" id="a2227663-f5dd-4410-aac2-c07e26f1800c"/><con:assertion type="XPath Match" id="043ed63c-e321-4774-a1b7-5d3a5990e08b" name="XPath Match"><con:configuration><path>count(//*:ProcessingStatus/*:ProcessingStatusList)</path><content>1</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" id="d44c78a0-4ab7-4c67-888a-7e41430c0729" name="Response"><con:configuration><path>count(//*:careManager)</path><content>0</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" id="b112514e-7fe5-45b7-a9c0-9956025ed2ec" name="Error"><con:configuration><path>count(//*:lastUnsuccessfulSynchError)</path><content>1</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties><con:property><con:name>agg-env</con:name><con:value>http://localhost:8081/GetAggregatedCareManagers/service/v1</con:value></con:property></con:properties></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
